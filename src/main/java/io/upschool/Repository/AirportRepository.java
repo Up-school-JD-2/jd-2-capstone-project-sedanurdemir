@@ -6,4 +6,6 @@ import io.upschool.Entity.Airport;
 
 public interface AirportRepository extends JpaRepository<Airport, Long> {
 
+	Airport findByAirportCode(String airportCode);
+
 }
