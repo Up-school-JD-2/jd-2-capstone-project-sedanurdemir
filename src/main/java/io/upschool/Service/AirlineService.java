@@ -9,6 +9,7 @@ import io.upschool.DTO.AirlineSaveRequest;
 import io.upschool.DTO.AirlineSaveResponse;
 import io.upschool.DTO.AirlineUpdateRequest;
 import io.upschool.Entity.Airline;
+import io.upschool.Entity.Airport;
 import io.upschool.Exceptions.AirlineNotFoundException;
 import io.upschool.Repository.AirlineRepository;
 import jakarta.transaction.Transactional;
@@ -78,4 +79,7 @@ public void delete(Long id) {
         throw new AirlineNotFoundException("Airline not found with id: " + id);
     }
 }
+
+	
+
 }

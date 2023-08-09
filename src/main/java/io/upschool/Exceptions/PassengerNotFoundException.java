@@ -6,9 +6,9 @@ import lombok.AllArgsConstructor;
 
 @RestController
 @AllArgsConstructor
-public class AirlineNotFoundException extends RuntimeException{
+public class PassengerNotFoundException extends RuntimeException {
 
-	public AirlineNotFoundException(String message) {
+	public PassengerNotFoundException (String message) {
 		super(message);
 	}
 }

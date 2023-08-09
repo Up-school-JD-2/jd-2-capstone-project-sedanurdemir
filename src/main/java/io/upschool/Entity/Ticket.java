@@ -3,6 +3,7 @@ package io.upschool.Entity;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import io.upschool.DTO.TicketSaveResponse;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -58,18 +59,20 @@ public class Ticket {
     }
 
 
-//	public TicketSaveResponse toTicketSaveResponse() {
-//		// TODO Auto-generated method stub
-//		return TicketSaveResponse.builder()
-//                .ticketId(this.id)
-//                .ticketNumber(this.ticketNumber)
-//                .passengerFirtsName(this.getPassenger().getFirstName())
-//                .passengerLastName(this.getPassenger().getLastName())
-//                .flightId(this.flight.getId())
-//                .CreditCard(this.creditCard)
-//                .isCancelled(this.isCancelled)
-//                .build();
-//	}
-//   
+	
+
+	public TicketSaveResponse toTicketSaveResponse() {
+		// TODO Auto-generated method stub
+		return TicketSaveResponse.builder()
+                .ticketId(this.id)
+                .ticketNumber(this.ticketNumber)
+                .passengerFirtsName(this.getPassenger().getFirstName())
+                .passengerLastName(this.getPassenger().getLastName())
+                .flightId(this.flight.getId())
+                .CreditCard(this.creditCard)
+                .isCancelled(this.isCancelled)
+                .build();
+	}
+   
 }
 

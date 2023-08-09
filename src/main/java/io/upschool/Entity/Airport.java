@@ -19,6 +19,8 @@ import lombok.Setter;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 public class Airport {
 		@Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)

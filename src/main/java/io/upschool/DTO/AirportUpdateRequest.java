@@ -18,4 +18,5 @@ public class AirportUpdateRequest {
 	private Long id;
 	private String airportCode;
 	private String airportName;
+	private String cityName;
 }

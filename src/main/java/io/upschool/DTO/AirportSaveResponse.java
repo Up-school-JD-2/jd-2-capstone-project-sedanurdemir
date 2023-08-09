@@ -18,4 +18,5 @@ public class AirportSaveResponse {
 	private Long id;
 	private String airportName;
 	private String airportCode;
+	private String cityName;
 }

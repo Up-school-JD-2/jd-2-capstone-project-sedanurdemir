@@ -25,6 +25,7 @@ public class AirportService {
 		var newAirport=Airport.builder()
 				.airportName(airportSaveRequest.getAirportName())
 				.airportCode(airportSaveRequest.getAirportCode())
+				.airportName(airportSaveRequest.getCityName())
 				.build();
 		
 		Airport savedAirport=airportRepository.save(newAirport);
@@ -34,6 +35,7 @@ public class AirportService {
 				.id(savedAirport.getId())
 				.airportCode(savedAirport.getAirportCode())
 				.airportName(savedAirport.getAirportName())
+				.cityName(savedAirport.getCityName())
 				.build();
 	}
 
@@ -72,10 +74,12 @@ public class AirportService {
             throw new AirportNotFoundException("Airport not found with id: " + id);
         }
     }
-	
+
 	public Airport findAirportByCode(String airportCode) {
-       
-        return airportRepository.findByAirportCode(airportCode);
-    }
+		return airportRepository.findByAirportCode(airportCode);
+		
+	}
 	
+
+
 }

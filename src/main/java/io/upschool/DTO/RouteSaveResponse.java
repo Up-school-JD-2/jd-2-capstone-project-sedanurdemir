@@ -1,5 +1,6 @@
 package io.upschool.DTO;
 
+import io.upschool.Entity.Airport;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -8,16 +9,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Data
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Getter
+@Setter
+public class RouteSaveResponse {
 
-public class AirportSaveRequest {
-
-	private String airportCode;
-	private String airportName;
-	private String cityName;
-	
+	private Long id;
+    private Airport departureAirport;
+    private Airport arrivalAirport;
 }
