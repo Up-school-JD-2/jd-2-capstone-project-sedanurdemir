@@ -28,6 +28,7 @@ public class AirlineService {
 	public AirlineSaveResponse save(AirlineSaveRequest airlineSaveRequest) {
     Airline newAirline = Airline.builder()
                                 .airlineCode(airlineSaveRequest.getAirlineCode())
+                                .airlineIsActive(true)
                                 .airlineName(airlineSaveRequest.getAirlineName())
                                 .build();
 
@@ -40,9 +41,9 @@ public class AirlineService {
                               .build();
 }
 	
-	public Airline save(Airline airline) {
-		return airlineRepository.save(airline);
-	}
+//	public Airline save(Airline airline) {
+//		return airlineRepository.save(airline);
+//	}
 
 	public List<Airline> getAllAirlines() {
     return airlineRepository.findAll();

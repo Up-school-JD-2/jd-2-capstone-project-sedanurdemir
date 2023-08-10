@@ -31,12 +31,12 @@ public class FlightService {
     private final RouteService routeService;
     private final TicketRepository ticketRepository;
 
-    public Flight save(Flight flight) {
-    	var airline =airlineService.save(flight.getAirline());
-    	flight.setAirline(airline);
-    	return flightRepository.save(flight);
-    
-    }
+//    public Flight save(Flight flight) {
+//    	var airline =airlineService.save(flight.getAirline());
+//    	flight.setAirline(airline);
+//    	return flightRepository.save(flight);
+//    
+//    }
 
     
     @Transactional
