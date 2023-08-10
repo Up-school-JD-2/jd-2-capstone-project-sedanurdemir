@@ -42,6 +42,7 @@ public class RouteService {
         Route newRoute = Route.builder()
                               .departureAirport(departureAirport)
                               .arrivalAirport(arrivalAirport)
+                              .routeIsActive(true)
                               .build();
 
         Route savedRoute = routeRepository.save(newRoute);

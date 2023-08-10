@@ -11,7 +11,7 @@ import io.upschool.Entity.Flight;
 @Repository
 public interface FlightRepository extends JpaRepository<Flight, Long> {
 	
-	@Query
+	
 	 List<Flight> findByDepartureCityAndArrivalCity(String departureCity, String arrivalCity);
 
 }

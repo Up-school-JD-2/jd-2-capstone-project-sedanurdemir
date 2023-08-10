@@ -59,9 +59,10 @@ public class FlightService {
                                  .route(route)
                                  .airline(airline)
                                  .flightNumber(flightSaveRequest.getFlightNumber())
-                                 .departureCity(route.getDepartureAirport().getAirportName())
-                                 .arrivalCity(route.getArrivalAirport().getAirportName())
+                                 .departureCity(route.getDepartureAirport().getCityName())
+                                 .arrivalCity(route.getArrivalAirport().getCityName())
                                  .totalSeats(flightSaveRequest.getTotalSeats())
+                                 .flightIsActive(true)
                                  .soldSeats(0) 
                                  .build();
 
@@ -101,8 +102,8 @@ public class FlightService {
         existingFlight.setRoute(route);
         existingFlight.setFlightNumber(flightUpdateRequest.getFlightNumber());
         existingFlight.setTotalSeats(flightUpdateRequest.getTotalSeats());
-        existingFlight.setDepartureCity(flightUpdateRequest.getDepartureCity().getAirportName());
-        existingFlight.setArrivalCity(flightUpdateRequest.getArrivalCity().getAirportName());
+        existingFlight.setDepartureCity(flightUpdateRequest.getDepartureCity().getCityName());
+        existingFlight.setArrivalCity(flightUpdateRequest.getArrivalCity().getCityName());
         
 
         Flight updatedFlight = flightRepository.save(existingFlight);
