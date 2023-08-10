@@ -107,18 +107,18 @@ public class TicketService {
 
     
 
-    // Kredi kartı bilgisini maskeleyen yardımcı metod
+    // Kredi kartı maskeleme
     private String maskCreditCard(String creditCardNumber) {
     	
     	   StringBuilder maskedCreditCard = new StringBuilder();
    
-    	// Sadece rakamları içeren bir kredi kartı numarası oluştur
+    	
         String cleanedNumber = creditCardNumber.replaceAll("[^0-9]", "");
 
-        int visibleLength = 4; // Son 4 hane görünür, geri kalanları maskeli olacak
+        int visibleLength = 4; 
         int cardNumberLength = cleanedNumber.length();
 
-        // Maskelenmiş kredi kartı numarasını oluştur
+        
         
         for (int i = 0; i < cardNumberLength - visibleLength; i++) {
         	if (i < 6 || i >= cardNumberLength - 4) {
@@ -127,12 +127,12 @@ public class TicketService {
                 maskedCreditCard.append("*");
             }
             
-            if ((i + 1) % 4 == 0) { // 4 karakterden sonra bir boşluk ekle
+            if ((i + 1) % 4 == 0) { 
                 maskedCreditCard.append(" ");
             }
         }
         
-        // Son 4 hane ekle
+      
         maskedCreditCard.append(cleanedNumber.substring(cardNumberLength - visibleLength));
          
         return maskedCreditCard.toString();
@@ -140,42 +140,41 @@ public class TicketService {
     
     
     public TicketSaveResponse buyTicket(TicketSaveRequest ticketSaveRequest, Long flightId) {
-        // Uçuşun var olduğunu kontrol edelim
+       
         Flight flight = flightRepository.findById(flightId)
                 .orElseThrow(() -> new FlightNotFoundException("Flight not found with id: " + flightId));
 
-        // Uçuşun toplam koltuk sayısını ve satılan koltuk sayısını kontrol edelim
+       
         int totalSeats = flight.getTotalSeats();
         int soldSeats = flight.getSoldSeats();
         if (soldSeats >= totalSeats) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "No available seats for the flight with id: " + flightId);
         }
 
-        // Yeni Passenger nesnesi oluşturalım
+        
         Passenger passenger=Passenger.builder()
                 .firstName(ticketSaveRequest.getPassengerFirstName())
                 .lastName(ticketSaveRequest.getPassengerLastName())
                 .build();
         passenger=passengerRepository.save(passenger);
 
-        // Kredi kartı numarasını maskeleyelim
+        
         
         if (ticketSaveRequest.getCreditCard() == null) {
-            // creditCardNumber null ise maskeleme işlemi yapılamaz, hata döndür
+           
             throw new IllegalArgumentException("Credit card number cannot be null.");
         }
         String maskedCreditCard = maskCreditCard(ticketSaveRequest.getCreditCard());
 
-        // Yeni bilet oluşturalım
+      
         Ticket newTicket = Ticket.builder()
                 .flight(flight)
                 .creditCard(maskedCreditCard)
                 .passenger(passenger)
-                .saleDate(LocalDateTime.now()) // Satış tarihini kaydedelim
+                .saleDate(LocalDateTime.now()) 
                 .build();
        
 
-        // Biletin iptal edilip edilmediğini kontrol edelim
         boolean isCancelled = ticketSaveRequest.isCancelled();
         if (isCancelled) {
             newTicket.setCancelled(true);
@@ -183,14 +182,14 @@ public class TicketService {
         }
 
         newTicket.generateTicketNumber();
-        // Biletin satılan koltuk sayısını arttıralım ve uçuşu güncelleyelim
+       
         flight.setSoldSeats(soldSeats + 1);
         flightRepository.save(flight);
 
-        // Bileti kaydedelim
+ 
         Ticket savedTicket = ticketRepository.save(newTicket);
 
-        // Response olarak uygun TicketSaveResponse nesnesini döndürelim
+      
         return TicketSaveResponse.builder()
                 .ticketId(savedTicket.getId())
                 .CreditCard(savedTicket.getCreditCard())
@@ -205,25 +204,24 @@ public class TicketService {
     }
     
     public String cancelTicket(String ticketNumber) {
-        // Veritabanında bilet kaydını bilet numarasıyla bulun
+        
         Ticket ticket = ticketRepository.findByTicketNumber(ticketNumber);
 
-        // Bilet kaydını bulamazsa hata fırlatın
+   
         if (ticket == null) {
             throw new TicketNotFoundException("Ticket not found with ticket number: " + ticketNumber);
         }
 
-        // Bilet zaten iptal edilmişse hata fırlatın
         if (ticket.isCancelled()) {
             throw new IllegalStateException("Ticket with ticket number " + ticketNumber + " is already cancelled.");
         }
 
-        // Uçuşun toplam satılan koltuk sayısını güncelle
+        
         Flight flight = ticket.getFlight();
         flight.setSoldSeats(flight.getSoldSeats() - 1);
         flightRepository.save(flight);
 
-        // Biletin iptal tarihini ve durumunu güncelle
+       
         ticket.setCancelled(true);
         ticket.setCancellationDate(LocalDateTime.now());
 

@@ -26,15 +26,15 @@ public class Airport {
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    private Long id;
 
-	    @Column(name = "airport_code", length = 10, nullable = false)
+	    @Column(name = "airport_code", length = 10)
 	    private String airportCode;
 
-	    @Column(name = "airport_name", length = 100, nullable = false)
+	    @Column(name = "airport_name", length = 100)
 	    private String airportName;
 	    
 	    @Column(name="city", length = 10)
 	    private String cityName;
 	    
-	    @Column(name="airport_isActive", nullable = false)
+	    @Column(name="airport_isActive")
 	    private boolean airportIsActive=true;
 }

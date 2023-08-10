@@ -85,8 +85,7 @@ public class RouteService {
         existingRoute.setDepartureAirport(departureAirport);
         existingRoute.setArrivalAirport(arrivalAirport);
 
-        // Diğer alanları güncelle (isteğe bağlı)
-        // existingRoute.setSomeOtherProperty(routeUpdateRequest.getSomeOtherProperty());
+        
 
        
         Route updatedRoute = routeRepository.save(existingRoute);

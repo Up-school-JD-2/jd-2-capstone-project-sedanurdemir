@@ -25,7 +25,7 @@ public class Airline {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-   @Column(name="airline_name", nullable = false,length = 100, columnDefinition = "VARCHAR(100) DEFAULT 'Airline Name Not Provided'")
+   @Column(name="airline_name", nullable = false,length = 100)
     private String airlineName;
    
    @Column(name="airline_code", nullable = false,length = 10)
@@ -34,6 +34,6 @@ public class Airline {
    @Column(name="airline_isActive")
    private boolean airlineIsActive;
   
-    // Diğer alanlar ve getter/setter metotları
+
 	
 }

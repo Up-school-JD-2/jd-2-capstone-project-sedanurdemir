@@ -31,8 +31,6 @@ public class AirlineController {
     }
     
   
-    
-
     @GetMapping
     public List<Airline> getAllAirlines() {
         return airlineService.getAllAirlines();

@@ -22,10 +22,12 @@ public class AirportService {
 	private final AirportRepository airportRepository;
 	
 	public AirportSaveResponse save(AirportSaveRequest airportSaveRequest) {
+		
 		var newAirport=Airport.builder()
-				.airportName(airportSaveRequest.getAirportName())
 				.airportCode(airportSaveRequest.getAirportCode())
-				.airportName(airportSaveRequest.getCityName())
+				.airportName(airportSaveRequest.getAirportName())
+				.airportIsActive(true)
+				.cityName(airportSaveRequest.getCityName())
 				.build();
 		
 		Airport savedAirport=airportRepository.save(newAirport);
@@ -35,6 +37,7 @@ public class AirportService {
 				.id(savedAirport.getId())
 				.airportCode(savedAirport.getAirportCode())
 				.airportName(savedAirport.getAirportName())
+				
 				.cityName(savedAirport.getCityName())
 				.build();
 	}

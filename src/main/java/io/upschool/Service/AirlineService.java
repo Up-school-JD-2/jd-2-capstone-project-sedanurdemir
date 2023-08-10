@@ -19,11 +19,12 @@ import lombok.RequiredArgsConstructor;
 @Service
 @RequiredArgsConstructor
 @Transactional
-@Getter
+
 public class AirlineService {
 	
 	private final AirlineRepository airlineRepository;
 	
+	@Transactional
 	public AirlineSaveResponse save(AirlineSaveRequest airlineSaveRequest) {
     Airline newAirline = Airline.builder()
                                 .airlineCode(airlineSaveRequest.getAirlineCode())

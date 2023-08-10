@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 @ControllerAdvice
-public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
+public class GlobalExceptionHandler  {
 
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<ErrorResponse> handleResourceNotFoundException(ResourceNotFoundException ex) {
@@ -27,11 +27,11 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
     }
     
-    @ExceptionHandler(AirlineNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleAirlineNotFoundException(AirlineNotFoundException ex) {
-        ErrorResponse errorResponse = new ErrorResponse(ex.getMessage());
-        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
-    }
+//    @ExceptionHandler(AirlineNotFoundException.class)
+//    public ResponseEntity<ErrorResponse> handleAirlineNotFoundException(AirlineNotFoundException ex) {
+//        ErrorResponse errorResponse = new ErrorResponse(ex.getMessage());
+//        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+//    }
     
     @ExceptionHandler(TicketNotFoundException.class)
     public ResponseEntity<ErrorResponse>handleTicketNotFoundException(TicketNotFoundException ex){

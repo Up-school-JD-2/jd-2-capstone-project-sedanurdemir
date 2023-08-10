@@ -52,8 +52,7 @@ public class Ticket {
 	
 
     public void generateTicketNumber() {
-        // Burada bilet numarasını oluşturacak mantığı yazın.
-        // Örneğin, benzersiz bir numara oluşturmak için UUID kullanabilirsiniz.
+       
     	 String generatedTicketNumber = UUID.randomUUID().toString().replace("-", "").substring(0, 10);
          this.ticketNumber = generatedTicketNumber;
     }
@@ -62,7 +61,7 @@ public class Ticket {
 	
 
 	public TicketSaveResponse toTicketSaveResponse() {
-		// TODO Auto-generated method stub
+		
 		return TicketSaveResponse.builder()
                 .ticketId(this.id)
                 .ticketNumber(this.ticketNumber)
