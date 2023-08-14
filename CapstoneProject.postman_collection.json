@@ -1,0 +1,414 @@
+{
+	"info": {
+		"_postman_id": "f24d0ee0-4d82-4782-aa0f-cc138950c512",
+		"name": "CapstoneProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28807469"
+	},
+	"item": [
+		{
+			"name": "AddAirline",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"airlineName\":\"Turkish Airlines\",\n    \"airlineCode\":\"THY\"\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/airlines",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"airlines"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "AddAirline",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"airlineName\":\"Pegasus\",\n    \"airlineCode\":\"FLYPGS\"\n    \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/airlines",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"airlines"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 10 Aug 2023 18:01:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error_message\": \"An unexpected error occurred.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "addAirports",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"airportCode\": \"IST\",\n    \"airportName\": \"Istanbul Airport\",\n    \"cityName\":\"İstanbul\",\n    \"airpotIsActive\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/airports",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"airports"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "addAirports",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"airportCode\": \"IST\",\n    \"airportName\": \"Istanbul Airport\",\n    \"cityName\":\"İstanbul\",\n    \"airpotIsActive\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/airports",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"airports"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "{{host}}/api/airports",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"airportCode\": \"IZM\",\n    \"airportName\": \"Izmir Adnan Menderes Airport\",\n    \"cityName\":\"İzmir\",\n    \"airpotIsActive\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/airports",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"airports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addRoutes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"departureAirport\": {\n        \"airportCode\": \"ANK\"\n    },\n    \"arrivalAirport\": {\n        \"airportCode\": \"IST\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/routes",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"routes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "addRoutes",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"departureAirport\": {\n        \"airportCode\": \"ANK\"\n    },\n    \"arrivalAirport\": {\n        \"airportCode\": \"IST\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/routes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"routes"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "addFlight",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"route\": {\n        \"routeId\": 2\n    },\n    \"airline\": {\n        \"id\": 2\n    },\n    \"flightNumber\": \"FL123\",\n    \"totalSeats\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/flights",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"flights"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "addFlight",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"route\": {\n        \"routeId\": 2\n    },\n    \"airline\": {\n        \"id\": 2\n    },\n    \"flightNumber\": \"FL123\",\n    \"totalSeats\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/flights",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"flights"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "searchFlight",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/flights/search?departureCity=Ankara&arrivalCity=İstanbul",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"flights",
+						"search"
+					],
+					"query": [
+						{
+							"key": "departureCity",
+							"value": "Ankara"
+						},
+						{
+							"key": "arrivalCity",
+							"value": "İstanbul"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buyTicket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"flightId\": 3,\n    \"passengerFirstName\": \"seda\",\n    \"passengerLastName\": \"demir\",\n    \"creditCard\": \"4850,5604,6758,5874\",\n    \"isCancelled\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/tickets/3/buy",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"tickets",
+						"3",
+						"buy"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "buyTicket",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"flightId\": 3,\n    \"passengerFirstName\": \"seda\",\n    \"passengerLastName\": \"demir\",\n    \"creditCard\": \"4850,5604,6758,5874\",\n    \"isCancelled\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/tickets/3/buy",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"tickets",
+								"3",
+								"buy"
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "cancelTicket",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "b419b2c482",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/tickets/b419b2c482/cancel",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"tickets",
+						"b419b2c482",
+						"cancel"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
