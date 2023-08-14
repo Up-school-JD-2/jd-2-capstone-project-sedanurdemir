@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"airlineName\":\"Turkish Airlines\",\n    \"airlineCode\":\"THY\"\n    \n}",
+					"raw": "{\n    \"airlineName\":\"Rynair\",\n    \"airlineCode\":\"RYN\"\n    \n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -39,7 +39,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"airlineName\":\"Pegasus\",\n    \"airlineCode\":\"FLYPGS\"\n    \n}",
+							"raw": "{\n    \"airlineName\":\"AnadoluJet\",\n    \"airlineCode\":\"ANJ\"\n    \n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -90,7 +90,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"airportCode\": \"IST\",\n    \"airportName\": \"Istanbul Airport\",\n    \"cityName\":\"İstanbul\",\n    \"airpotIsActive\": true\n}",
+					"raw": "{\n    \"airportCode\": \"ANK\",\n    \"airportName\": \"Esenboğa Airport\",\n    \"cityName\":\"Ankara\",\n    \"airpotIsActive\": true\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -116,7 +116,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"airportCode\": \"IST\",\n    \"airportName\": \"Istanbul Airport\",\n    \"cityName\":\"İstanbul\",\n    \"airpotIsActive\": true\n}",
+							"raw": "{\n    \"airportCode\": \"MMA\",\n    \"airportName\": \"Muğla Milas Airport\",\n    \"cityName\": \"Muğla\",\n    \"airpotIsActive\": true\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -201,7 +201,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"departureAirport\": {\n        \"airportCode\": \"ANK\"\n    },\n    \"arrivalAirport\": {\n        \"airportCode\": \"IST\"\n    }\n}",
+							"raw": "{\n    \"departureAirport\": {\n        \"airportCode\": \"ANK\"\n    },\n    \"arrivalAirport\": {\n        \"airportCode\": \"MMA\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -259,7 +259,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"route\": {\n        \"routeId\": 2\n    },\n    \"airline\": {\n        \"id\": 2\n    },\n    \"flightNumber\": \"FL123\",\n    \"totalSeats\": 3\n}",
+							"raw": "{\n    \"route\": {\n        \"routeId\": 7\n    },\n    \"airline\": {\n        \"id\": 10\n    },\n    \"flightNumber\": \"DS123\",\n    \"totalSeats\": 6\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -348,7 +348,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"flightId\": 3,\n    \"passengerFirstName\": \"seda\",\n    \"passengerLastName\": \"demir\",\n    \"creditCard\": \"4850,5604,6758,5874\",\n    \"isCancelled\": false\n}",
+							"raw": "{\n    \n    \"passengerFirstName\": \"sedanur\",\n    \"passengerLastName\": \"demir\",\n    \"creditCard\": \"1234-5678-9123-5678\",\n    \"isCancelled\": false\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -356,14 +356,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/api/tickets/3/buy",
+							"raw": "{{host}}/api/tickets/8/buy",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"api",
 								"tickets",
-								"3",
+								"8",
 								"buy"
 							]
 						}
@@ -396,14 +396,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{host}}/api/tickets/b419b2c482/cancel",
+					"raw": "{{host}}/api/tickets/61b9936a87/cancel",
 					"host": [
 						"{{host}}"
 					],
 					"path": [
 						"api",
 						"tickets",
-						"b419b2c482",
+						"61b9936a87",
 						"cancel"
 					]
 				}
